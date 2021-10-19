@@ -7,7 +7,6 @@ class Book {
         this.author = author;
         this.read = read;
         this.date = date;
-    
     }
 
     markAsFinished(){ // Atualiza livro foi lido e adiciona a data da conclusão da leitura
@@ -21,7 +20,6 @@ class Book {
 }
 
 class BookList {
-
     constructor(){
         this.actualBook;
         this.allBooks = [];
@@ -45,11 +43,9 @@ class BookList {
 
     finishBook(){
         if(this.actualBook) {
-
             this.actualBook.markAsFinished(); //Marca que o livro já foi lido e adiciona a data de conclusão
             this.readBooks = [...this.readBooks, this.actualBook] //Adiciona na estante de livros lidos
             this.actualBook = this.unreadBooks.shift()
-        
         } else {
             console.log('Você não está lendo nenhum livro atualmente')
         }
@@ -60,7 +56,7 @@ class BookList {
     }
 
     get lastReadBook(){ // Retorna o último livro adicionado à estante de livros lidos
-        return this.readBooks[this.readBooks.length - 1] || 'Você não leu nenhum livro ainda'
+        return this.readBooks[this.readBooks.length - 1] || 'Você não concluiu nenhum livro ainda'
     }
     
     get nextBookToRead(){ // Retorna próximo livro a ser lido
@@ -85,7 +81,8 @@ livros // Criando uma intancia Book de cada livro, e adicionando na Book list
 .map(livro => new Book(livro)) // Instanciando uma nova classe de livros para cada objeto de livro
 .forEach(book => bookList.addBook(book)) // Adicionando as instanciações de livros na BookList
 
-// Baseado no teste já criado, pode ignorar
+///////////////////////////////////////
+// TESTES DAS FUNCIONALIDADES
 
 console.log("Todos os livros na lista")
 console.log(bookList.allBooksList)
@@ -144,5 +141,7 @@ console.log(bookList.currentBook)
 
 console.log("Próximo livro a ser lido")
 console.log(bookList.nextBookToRead)
+
+bookList.finishBook()
 
 bookList.finishBook()
