@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+<body>
+    <style>
+        * {font-family: 'Karla', sans-serif;}body{display: flex;justify-content: center;}h1.h1{text-align: center;width: 100;font-size: 3rem;font-weight: 700;margin-top: 0;margin-bottom: 1rem;}input.formulario__input{display: inline-block;padding: 10px;border: 1px solid rgb(167, 167, 167);border-radius: 4px;width: 232px;color: black;font-size: 20px;}button.formulario__btn{font-size: 20px;border-color: rgb(167, 167, 167);background-color: #007bff;border-radius: 4px;padding: 10px;}button.formulario__btn:hover{background-color: #0059b9;}button.formulario__btn:active{background-color: #003369;}.btn{display: inline-block;color: white;border: 1px solid}h2.h2{font-size: 2rem;font-weight: 700;margin-top: 1rem;margin-bottom: 0;padding-bottom: 1.5px;border-bottom: 1.5px solid rgb(167, 167, 167);width: 300px;}ul.lista{border-radius: 4px;padding: 0px 0px;width: 280px;margin-top: 0;}li.lista__item{background-color: white;border-bottom: 1px solid black;list-style: none;padding: 8px 15px;display: flex;align-items: center;justify-content: space-between;}.item{margin-top: 0;margin-bottom: 0;}p.item__nome{margin-right: auto;font-size: 20px;}button.item__btn{background-color: #dc3545;border-color: #dc354600;padding: 8px 11px;font-weight: 700;border-radius: 100%;}button.item__btn:hover{background-color: #a02733;}button.item__btn:active{background-color: #6e1a22;}
+    </style>
+<section class="container">
+    
+    <h1 class="h1">Cadastro</h1>
+    <form action="submit" class="formulario" data-form>
+        <input class="formulario__input" data-input placeholder="Digite o Nome" type="text" required/>
+        <button class="formulario__btn btn" type="submit">OK</button>
+    </form>
+
+    <h2 class="h2" >Cadastrados</h2>
+    <ul class="lista" data-lista>
+    </ul>
+
+</section>
+
+<script>
+    const dado = document.querySelector('[data-input]')
+    const formulario = document.querySelector('[data-form]')
+    const lista = document.querySelector('[data-lista]')
+    
+    formulario.addEventListener('submit',e => {
+        e.preventDefault()
+        lista.appendChild(criaUsuario(dado.value))
+        formulario.reset()
+    })
+    
+    const criaUsuario = nome => {
+    
+        const li = document.createElement('li')
+        const p = document.createElement('p')
+        const button = document.createElement('button')
+    
+        li.className = 'lista__item'
+        
+        p.className = 'item item__nome'
+        p.textContent = nome
+    
+        button.className = 'btn item item__btn'
+        button.setAttribute('data-lista-btn','')
+        button.textContent = 'X'
+        button.onclick = () => li.remove()
+    
+        li.appendChild(p)
+        li.appendChild(button)
+    
+        return li
+    }
+</script>
+</body>
+</html>
