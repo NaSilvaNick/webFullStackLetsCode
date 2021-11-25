@@ -1,0 +1,10 @@
+* {
+    display: block;
+}
+
+.container {
+    width: 500px;
+    margin: 0 50px;
+    padding: 50px;
+    border: 1px solid black;
+}
