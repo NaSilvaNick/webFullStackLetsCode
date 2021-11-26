@@ -1,7 +1,7 @@
 <fieldset>
     <legend>Tentar letras</legend>
 
-    <input type="text" maxlength="1" [(ngModel)]="input">
+    <input type="text" maxlength="1" #inputLetra>
     
-    <button (click)="tentar()">Tentar</button>
+    <button (click)="tentar(inputLetra)">Tentar</button>
 </fieldset>

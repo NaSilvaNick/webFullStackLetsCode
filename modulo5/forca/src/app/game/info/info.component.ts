@@ -1,19 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Status } from './../status.model';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent implements OnInit{
-
+export class InfoComponent{
   @Input() public letrasTentadas: string = ''
-  @Input() public maximoErros: number = 0
-  @Input() public status: string = ''
-
-  constructor() {}
-  
-
-  ngOnInit(): void {}
-
+  @Input() public erros: number = 0
+  @Input() public status: Status = Status.INICIO
+  tipoStatus: typeof Status = Status
 }

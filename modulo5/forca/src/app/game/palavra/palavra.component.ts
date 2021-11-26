@@ -1,17 +1,11 @@
-import { GameService } from './../game.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-palavra',
   templateUrl: './palavra.component.html',
   styleUrls: ['./palavra.component.css']
 })
-export class PalavraComponent implements OnInit {
-  
+export class PalavraComponent {
   @Input() lacunas: string = ''
-  @Input() palavraLength: number = 0
-
-  constructor() { }
-
-  ngOnInit(): void {}
+  @Input() tamanho: number = 0
 }

@@ -1,3 +1,4 @@
+import { Status } from './status.model';
 import { GameService } from './game.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,80 +9,73 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  palavraSecreta: string = ''
-  palavras: string[] = ['angular','javascript','typescript','nickolas','calopsita']
-  lacunas: string = ''
-  letrasTentadas: string = ''
-  maximoErros: number = 6
-  status: string = 'Vamos Jogar!!!'
-  palavraLength: number = 0
-
+  private palavraSecreta: string = ''
+  private palavras: string[] = ['Angular','Javascript','Typescript','Nickolas','Calopsita']
+  
+  public lacunas: string = ''
+  public letrasTentadas: string = ''
+  public erros: number = 6
+  public status: Status = Status.INICIO
+  public palavraTamanho: number = 0
+  
   constructor(private service: GameService) {}
-
+  
+  public resetGame(): void {
+    
+    this.status = Status.INICIANDO
+  
+    setTimeout((): void => {
+      
+      this.service.resetGame()
+      this.palavraSecreta = this.service.escolhePalavraSecreta(this.palavras)
+      this.lacunas = this.service.criaLacunas(this.palavraSecreta)
+      this.palavraTamanho = this.palavraSecreta.length
+      this.status = Status.INICIO
+      this.letrasTentadas = ''
+      this.erros = 6
+    }, 800)
+  }
+  
   ngOnInit(): void {
+    
     this.resetGame()
   }
 
-  tentarLetra(inputLetra: string): void {
+  tentarLetra(letra: string): void {
 
-    const letra = inputLetra.toLowerCase().trim()
-
-    if(this.maximoErros == 0 || this.maximoErros == 7) return
+    if(!this.erros || !letra) return
 
     if(this.letrasTentadas.includes(letra)){
-      this.status = 'Voce já tentou essa letra'
+      this.status = Status.REPETIDA
       return
     } 
-
+    
     if (this.palavraSecreta.includes(letra)){
       
-      this.status = 'Você acertou!!!'
+      this.status = Status.ACERTOU
       this.lacunas = this.service.marcaLetra(letra)
-      this.guardaLetra(letra)
-    } else {
+      this.letrasTentadas = this.service.guardaLetra(letra)
+      
+    } 
 
-      this.guardaLetra(letra)
-      this.status = 'você errou.'
-      this.maximoErros--
+    if (!this.palavraSecreta.includes(letra)){
+    
+      this.status = Status.ERROU
+      this.erros = this.service.marcaErro(this.erros)
+      this.letrasTentadas = this.service.guardaLetra(letra)
     }
     
-    this.verificaJogo()
-  }
-  
-  verificaJogo(): void {
-
-    if(this.maximoErros == 0){
-      this.status = 'você perdeu, que pena...'
-      return
-    }
-
-    if(this.palavraSecreta == this.lacunas.split(' ').join('')){
-      this.status = 'PARABÉNS VOCÊ GANHOU!!!'
-      this.maximoErros = 7
-      return
-    }
-  }
-
-  resetGame(): void {
-    
-    this.status = 'Iniciando Jogo...'
-
-    setTimeout(()=>{
-      this.letrasTentadas = ''
-      this.maximoErros = 6
-      this.status = 'Vamos Jogar!!!'
-      this.escolhePalavraSecreta()
-      this.lacunas = this.service.criaLacunas(this.palavraSecreta)
-      this.palavraLength = this.palavraSecreta.length
-    }, 600)
-
-  }
-
-  private guardaLetra(letra: string): void {
-    this.letrasTentadas = [...this.letrasTentadas, letra].join(' ')
-  }
-
-  private escolhePalavraSecreta(): void {
-    this.palavraSecreta = this.palavras[Math.floor(Math.random() * this.palavras.length)].toLowerCase().trim()
+    this.service.verificaJogo(
+      
+      (status: Status) => {
+      
+        this.status = status
+      },
+      
+      (erros: number) => {
+      
+        this.erros = erros
+      }
+    )
   }
 }

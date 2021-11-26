@@ -1,25 +1,20 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
 
-  @Output() aoTentar = new EventEmitter()
-  input: string = ''
+  @Output() public aoTentar = new EventEmitter()
 
-  constructor(){}
-
-  ngOnInit(): void {}
-
-  tentar(): void {
-    this.aoTentar.emit(this.input)
-    this.clearInput()
+  public tentar(input: HTMLInputElement): void {
+    this.aoTentar.emit(input.value.toLowerCase())
+    this.limparInput(input)
   }
 
-  clearInput(): void {
-    this.input = ''
+  private limparInput(input: HTMLInputElement): void {
+    input.value = ''
   }
 }

@@ -1,18 +1,16 @@
 <app-info
     [letrasTentadas]="letrasTentadas"
-    [maximoErros]="maximoErros"
+    [erros]="erros"
     [status]="status"
-></app-info>
+    ></app-info>
 
 <app-palavra
     [lacunas]="lacunas"
-    [palavraLength]="palavraLength"
+    [tamanho]="palavraTamanho"
 ></app-palavra>
 
 <app-form
     (aoTentar)="tentarLetra($event)"
 ></app-form>
 <br>
-<button
-    (click)="resetGame()"
->Reset Game</button>
+<button (click)="resetGame()">Reset Game</button>

@@ -5,10 +5,19 @@
 
 <fieldset>
     <legend>Máximo de Erros</legend>
-    {{maximoErros}}
+    {{erros}}
 </fieldset>
 
 <fieldset>
     <legend>status</legend>
-    {{status}}
+    <div [ngSwitch]="status">
+        <span *ngSwitchCase="tipoStatus.GANHOU">VOCÊ GANHOU!!! PARABENS!</span>
+        <span *ngSwitchCase="tipoStatus.PERDEU">você perdeu, que pena.</span>
+        <span *ngSwitchCase="tipoStatus.ACERTOU">Acertou a letra</span>
+        <span *ngSwitchCase="tipoStatus.ERROU">Errou a letra</span>
+        <span *ngSwitchCase="tipoStatus.REPETIDA">Você ja tentou essa letra!</span>
+        <span *ngSwitchCase="tipoStatus.INICIO">Vamos Jogar!</span>
+        <span *ngSwitchCase="tipoStatus.INICIANDO">Iniciando Jogo</span>
+
+    </div>
 </fieldset>
