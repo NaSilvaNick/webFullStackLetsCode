@@ -1,0 +1,68 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "image": "https://cdn.pocket-lint.com/r/s/970x/assets/images/154419-games-review-hands-on-playstation-5-hands-on-pics-image1-tbq3hzlrkw-jpg.webp",
+      "product": "playstation 5",
+      "description": "Video game da sony",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
+      "product": "Livro: Terapia de Guerrilha",
+      "description": "Livro terapia de guerrilha do autor Italo Marsili",
+      "price": 50
+    }
+  ],
+  "carrinho": [
+    {
+      "id": "2dc6794e-b5db-43fe-a5c5-0ae552ce60d9",
+      "image": "https://cdn.pocket-lint.com/r/s/970x/assets/images/154419-games-review-hands-on-playstation-5-hands-on-pics-image1-tbq3hzlrkw-jpg.webp",
+      "product": "playstation 5",
+      "description": "Video game da sony",
+      "price": 5000,
+      "quantity": 1
+    },
+    {
+      "id": "cb439a57-10ef-4185-9380-970bd7ad8f2a",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
+      "product": "Livro: Terapia de Guerrilha",
+      "description": "Livro terapia de guerrilha do autor Italo Marsili",
+      "price": 50,
+      "quantity": 1
+    },
+    {
+      "id": "f2a81e9f-47a3-486d-826b-95a6c4353bed",
+      "image": "https://cdn.pocket-lint.com/r/s/970x/assets/images/154419-games-review-hands-on-playstation-5-hands-on-pics-image1-tbq3hzlrkw-jpg.webp",
+      "product": "playstation 5",
+      "description": "Video game da sony",
+      "price": 5000,
+      "quantity": 1
+    },
+    {
+      "id": "d6dd45df-bed3-4018-9c7f-09a2c9ee0aa0",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
+      "product": "Livro: Terapia de Guerrilha",
+      "description": "Livro terapia de guerrilha do autor Italo Marsili",
+      "price": 50,
+      "quantity": 1
+    },
+    {
+      "id": "fa49d41d-a6d1-419a-af97-9eb8a097ff54",
+      "image": "https://cdn.pocket-lint.com/r/s/970x/assets/images/154419-games-review-hands-on-playstation-5-hands-on-pics-image1-tbq3hzlrkw-jpg.webp",
+      "product": "playstation 5",
+      "description": "Video game da sony",
+      "price": 5000,
+      "quantity": 1
+    },
+    {
+      "id": "82bf58c8-6aad-4fd1-84d9-8e969729975b",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
+      "product": "Livro: Terapia de Guerrilha",
+      "description": "Livro terapia de guerrilha do autor Italo Marsili",
+      "price": 50,
+      "quantity": 1
+    }
+  ]
+}

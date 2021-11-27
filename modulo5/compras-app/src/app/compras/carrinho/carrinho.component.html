@@ -1,0 +1,35 @@
+<fieldset class="field">
+    <legend>Carrinho de Compras</legend>
+    
+    <fieldset class="carrinho">
+        <legend>Total</legend>
+        {{ total | currency: "BRL"}}
+    </fieldset>
+
+    <fieldset class="carrinho">
+        <legend>Finalizar</legend>
+        <button>Finalizar compra</button>
+    </fieldset>
+
+</fieldset>
+
+<section *ngFor="let item of listaItens">
+    <fieldset class="field">
+        <legend>Item</legend>
+        <figure>
+            <div class="div">
+                <img class="img" [src]="item.image" [alt]="item.description">
+            </div>
+            <div class="div">
+                <figcaption>{{item.product}}</figcaption>
+                <p>{{ item.description }}</p>
+                <h4>R$ {{item.price}}</h4>
+            </div>
+            <div class="div">
+                <label for="quantidade">Quantidade:</label>
+                <input  (change)="ajustaQuantidade($event, item)" id="quantidade" name="quantidade" type="number" [value]="item.quantity">
+                <button (click)="removerItem(item.id)">Remover item</button>
+            </div>
+        </figure>
+    </fieldset>
+</section>
