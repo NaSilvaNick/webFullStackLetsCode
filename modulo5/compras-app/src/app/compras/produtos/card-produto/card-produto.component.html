@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card__content">
+        <figure class="content__info">
+                <img class="content__img" [src]="produto.image" [alt]="produto.description">
+            <div class="content__info">
+                <figcaption class="info__title">{{produto.product}}</figcaption>
+                <p class="info__author">{{ produto.description }}</p>
+            </div>
+        </figure>
+        <div class="content__buy">
+            <h4 class="content__price">{{produto.price | currency: "BRL"}}</h4>
+            <div class="btn">
+                <button class="content__addButton" (click)="adicionar.emit()">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -24,13 +24,13 @@ export class CarrinhoComponent implements OnInit {
     this.atualizaTotal()
   }
 
-  async removerItem(item: any){
-    await this.carrinhoService.deleteItem(item)
+  async removerItem(id: any){
+    await this.carrinhoService.deleteItem(id)
     await this.Renderizalista()
   }
 
-  async ajustaQuantidade(input: any, item: any){
-    await this.carrinhoService.updateItem(item.id, { quantity: Number(input.target.value) })
+  async ajustaQuantidade(input: any, id: any){
+    await this.carrinhoService.updateItem(id, { quantity: Number(input.target.value) })
     await this.Renderizalista()
   }
 

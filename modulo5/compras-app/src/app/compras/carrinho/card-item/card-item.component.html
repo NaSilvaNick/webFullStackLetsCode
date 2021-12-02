@@ -1,0 +1,23 @@
+<div class="item">
+    <figure class="item__info">
+        <div class="info__img">
+            <img class="img" [src]="item.image" [alt]="item.description">
+        </div>
+        <div class="info__description">
+            <figcaption class="description__title">{{item.product}}</figcaption>
+            <p class="description__author">{{ item.description }}</p>
+            <h4 class="description__price">{{item.price | currency: "BRL"}}</h4>
+        </div>
+        <div class="info__buy">
+            <div class="buy__quantity">
+                <label class="quantity__label" for="quantidade">Quantidade:</label>
+                <input class="quantity__input" (change)="alterar.emit($event)" id="quantidade" name="quantidade" type="number" [value]="item.quantity">
+            </div>
+            <div class="buy__price">
+                <p class="price__title">Subtotal:</p>
+                <p class="price__value">{{ item.price  * item.quantity | currency: "BRL"}}</p>
+            </div>
+            <a class="buy__remove" (click)="remover.emit()"><small class="icon">&#11199;</small> Remover item</a>
+        </div>
+    </figure>
+</div>

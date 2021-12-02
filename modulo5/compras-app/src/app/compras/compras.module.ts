@@ -6,15 +6,19 @@ import { ComprasComponent } from './compras.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { SucessoComponent } from './sucesso/sucesso.component';
-
-
+import { HomeComponent } from './home/home.component';
+import { CardProdutoComponent } from './produtos/card-produto/card-produto.component';
+import { CardItemComponent } from './carrinho/card-item/card-item.component';
 
 @NgModule({
   declarations: [
     ComprasComponent,
     ProdutosComponent,
     CarrinhoComponent,
-    SucessoComponent
+    SucessoComponent,
+    HomeComponent,
+    CardProdutoComponent,
+    CardItemComponent
   ],
   imports: [
     CommonModule,

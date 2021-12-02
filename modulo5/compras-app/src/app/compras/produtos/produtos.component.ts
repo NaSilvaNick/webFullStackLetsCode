@@ -22,24 +22,18 @@ export class ProdutosComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.produtosService.getProdutos()
     this.listaProdutos = this.produtosService.listaProdutos
-
-    console.log(this.listaProdutos)
   }
   
-  async adicionaCarrinho(produto: IProduct, quantidade: HTMLInputElement | any){
+  async adicionaCarrinho(produto: IProduct){
     try {
-
       await this.CarrinhoService.postItem(<IItem>{
         id: Uuid(),
         image: produto.image,
         product: produto.product,
         description: produto.description,
         price: produto.price,
-        quantity: Number(quantidade.value)
+        quantity: 1
       })
-
-      // alert("Produto adicionado com sucesso")
-
     } catch (error) { console.error(error) }
   }
 }

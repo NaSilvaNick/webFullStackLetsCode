@@ -1,6 +1,10 @@
-.img {
-    width: 300px;
+.produtos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.field {
-    width: 350px;
+
+.produto {
+    margin: 20px
 }

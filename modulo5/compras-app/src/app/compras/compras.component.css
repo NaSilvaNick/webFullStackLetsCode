@@ -1,0 +1,35 @@
+.container {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 1030px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(143, 180, 143);
+}
+
+.item {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(224, 243, 195);
+
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100;
+}
+
+.item:active {
+    background-color: rgb(84, 92, 73);
+    color: white;
+}
+
+.ativo {
+    background-color: black;
+    color: rgb(224, 243, 195);
+}

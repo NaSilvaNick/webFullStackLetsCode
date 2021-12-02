@@ -1,14 +1,8 @@
-<section *ngFor="let produto of listaProdutos">
-    <fieldset class="field">
-        <legend>Produto</legend>
-        <figure>
-            <img class="img" [src]="produto.image" [alt]="produto.description">
-            <figcaption>{{produto.product}}</figcaption>
-            <p>{{ produto.description }}</p>
-            <h4>R$ {{produto.price}}</h4>
-            <label for="quantidade">Quantidade:</label>
-            <input  #quantidadeProduto id="quantidade" name="quantidade" type="number" value="0">
-            <button (click)="adicionaCarrinho(produto, quantidadeProduto)">Adicionar ao carrinho</button>
-        </figure>
-    </fieldset>
-</section>
+<section class="produtos">
+    <app-card-produto
+    class="produto"
+    *ngFor="let produto of listaProdutos"
+    [produto]="produto"
+    (adicionar)="adicionaCarrinho(produto)"
+    ></app-card-produto>
+</section>   

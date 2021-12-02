@@ -1,7 +1,9 @@
-<p>compras works!</p>
+<header class="container header">
+    <div><a routerLinkActive="ativo" routerLink="home" class="item">Home</a></div>
+    <div><a routerLinkActive="ativo" routerLink="produtos" class="item">Produtos</a></div>
+    <div><a routerLinkActive="ativo" routerLink="carrinho" class="item">Carrinho de compras</a></div>
+</header>
 
-<app-carrinho></app-carrinho>
-
-<!-- <app-produtos></app-produtos> -->
-
-<app-sucesso></app-sucesso>
+<body class="container body">
+    <router-outlet></router-outlet>
+</body>
