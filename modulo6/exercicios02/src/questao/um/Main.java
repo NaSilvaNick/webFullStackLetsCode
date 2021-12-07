@@ -10,7 +10,7 @@ public class Main {
         Impressora.textoLeitor("digite o segundo valor");
         float segundoValor = Leitor.numero();
 
-        Leitor.fecharLeitor();5
+        Leitor.fecharLeitor();
 
         Impressora.imprimeCalculos(primeiroValor,segundoValor);
     }
