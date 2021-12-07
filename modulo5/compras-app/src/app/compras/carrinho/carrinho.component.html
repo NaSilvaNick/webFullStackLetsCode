@@ -9,9 +9,12 @@
 </section>
 
 <div class="item" *ngFor="let item of listaItens">
-    <app-card-item
+    <app-item
         [item]="item"
-        (remover)="removerItem(item.id)"
-        (alterar)="ajustaQuantidade($event, item.id)"
-    ></app-card-item>
+        (renderizar)="renderizaLista()"
+        ></app-item>
+</div>
+
+<div *ngIf="!listaItens.length">
+    <h2 class="center">Você não adicionou nenhum item ainda...</h2>
 </div>

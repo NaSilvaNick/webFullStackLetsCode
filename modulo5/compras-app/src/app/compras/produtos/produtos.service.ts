@@ -18,4 +18,9 @@ export class ProdutosService {
     const retorno = await axios.get(this.URL)
     this.listaProdutos = retorno.data
   }
+
+  public async getProduto(id: number | string): Promise<void>{
+    const retorno = await axios.get(`${this.URL}/${id}`)
+    return retorno.data
+  }
 }

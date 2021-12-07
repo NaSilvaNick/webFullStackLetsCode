@@ -2,6 +2,7 @@
   "produtos": [
     {
       "id": 1,
+      "cod" : "p01",
       "image": "https://images-na.ssl-images-amazon.com/images/I/41TsvI70n9L._SX335_BO1,204,203,200_.jpg",
       "product": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
       "description": "Thiago Nigro",
@@ -9,6 +10,7 @@
     },
     {
       "id": 2,
+      "cod" : "p02",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
       "product": "Terapia de Guerrilha",
       "description": "Dr. Italo Marsili",
@@ -16,6 +18,7 @@
     },
     {
       "id": 3,
+      "cod" : "p03",
       "image": "https://images-na.ssl-images-amazon.com/images/I/31UDNUTPfJL._SX346_BO1,204,203,200_.jpg",
       "product": "Rápido e devagar",
       "description": "Daniel Kahneman",
@@ -23,6 +26,7 @@
     },
     {
       "id": 4,
+      "cod" : "p04",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51Xby92J9KL._SX346_BO1,204,203,200_.jpg",
       "product": "O poder do hábito",
       "description": "Charles dumingo",
@@ -30,6 +34,7 @@
     },
     {
       "id": 5,
+      "cod" : "p05",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51DzotPWS0L._SX331_BO1,204,203,200_.jpg",
       "product": "Mais esperto que o Diabo: O mistério revelado da liberdade e do sucesso",
       "description": "Napoleon Hill",
@@ -38,55 +43,7 @@
   ],
   "carrinho": [
     {
-      "id": "8eee2d5e-4a7d-4fb0-b812-d27b2461862e",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/41TsvI70n9L._SX335_BO1,204,203,200_.jpg",
-      "product": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
-      "description": "Video game da sony",
-      "price": 13.9,
-      "quantity": 0
-    },
-    {
-      "id": "6bf7cfdf-1a42-4ed4-a64f-67f4fe9d49eb",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/31UDNUTPfJL._SX346_BO1,204,203,200_.jpg",
-      "product": "Rápido e devagar",
-      "description": "Daniel Kahneman",
-      "price": 34.99,
-      "quantity": 2
-    },
-    {
-      "id": "926acfb8-5751-4bfc-bbed-322e5341b96f",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51DzotPWS0L._SX331_BO1,204,203,200_.jpg",
-      "product": "Mais esperto que o Diabo: O mistério revelado da liberdade e do sucesso",
-      "description": "Napoleon Hill",
-      "price": 36.89,
-      "quantity": 1
-    },
-    {
-      "id": "e6a83d31-6acc-408c-965d-568a009c71b0",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51Xby92J9KL._SX346_BO1,204,203,200_.jpg",
-      "product": "O poder do hábito",
-      "description": "Charles dumingo",
-      "price": 36.89,
-      "quantity": 1
-    },
-    {
-      "id": "4671f52d-ed10-4f6c-987e-fc0ea43327c4",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51cNEw4S+SL._SX330_BO1,204,203,200_.jpg",
-      "product": "Terapia de Guerrilha",
-      "description": "Dr. Italo Marsili",
-      "price": 40.58,
-      "quantity": 1
-    },
-    {
-      "id": "800f19d9-097c-4f09-a23a-2bb06579f0d9",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/31UDNUTPfJL._SX346_BO1,204,203,200_.jpg",
-      "product": "Rápido e devagar",
-      "description": "Daniel Kahneman",
-      "price": 34.99,
-      "quantity": 1
-    },
-    {
-      "id": "35a46408-84b1-4bf4-8bc0-ad43690f9b42",
+      "id": "a84bdd1d-252d-4569-9675-2eaa4c808b37",
       "image": "https://images-na.ssl-images-amazon.com/images/I/41TsvI70n9L._SX335_BO1,204,203,200_.jpg",
       "product": "Do Mil ao Milhão. Sem Cortar o Cafezinho",
       "description": "Thiago Nigro",

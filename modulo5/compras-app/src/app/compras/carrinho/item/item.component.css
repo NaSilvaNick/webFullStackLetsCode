@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid grey;
     display: grid;
     grid-template-columns: 100px auto 299px;
     grid-template-rows: 1fr;
@@ -120,6 +120,5 @@
     color: red;
     font-weight: bold;
     font-size: 14px;
-    text-decoration: underline;
 } .icon { font-size: 13px; }
-.buy__remove:hover { color: rgb(138, 0, 0); cursor: pointer;}
+.buy__remove:hover { color: rgb(138, 0, 0); cursor: pointer; text-decoration: underline;}

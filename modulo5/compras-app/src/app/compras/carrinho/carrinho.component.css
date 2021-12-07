@@ -52,3 +52,17 @@
 .item {
     margin: 10px 0;
 }
+
+.item:first-child {
+    margin: 0 0 10px;
+}
+
+.item:last-child {
+    margin: 10px 0 0;
+}
+
+.center {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}

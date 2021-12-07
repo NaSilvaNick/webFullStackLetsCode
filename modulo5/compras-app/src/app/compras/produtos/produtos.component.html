@@ -1,8 +1,7 @@
 <section class="produtos">
-    <app-card-produto
-    class="produto"
-    *ngFor="let produto of listaProdutos"
-    [produto]="produto"
-    (adicionar)="adicionaCarrinho(produto)"
-    ></app-card-produto>
+    <app-produto
+        class="produto"
+        *ngFor="let produto of listaProdutos"
+        [produto]="produto"
+    ></app-produto>
 </section>   

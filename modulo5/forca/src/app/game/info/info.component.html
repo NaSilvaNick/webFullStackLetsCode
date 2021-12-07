@@ -1,23 +1,24 @@
-<fieldset>
-    <legend>Letras Tentadas</legend>
-    {{letrasTentadas}}
-</fieldset>
-
-<fieldset>
-    <legend>Máximo de Erros</legend>
-    {{erros}}
-</fieldset>
-
-<fieldset>
-    <legend>status</legend>
-    <div [ngSwitch]="status">
-        <span *ngSwitchCase="tipoStatus.GANHOU">VOCÊ GANHOU!!! PARABENS!</span>
-        <span *ngSwitchCase="tipoStatus.PERDEU">você perdeu, que pena.</span>
-        <span *ngSwitchCase="tipoStatus.ACERTOU">Acertou a letra</span>
-        <span *ngSwitchCase="tipoStatus.ERROU">Errou a letra</span>
-        <span *ngSwitchCase="tipoStatus.REPETIDA">Você ja tentou essa letra!</span>
-        <span *ngSwitchCase="tipoStatus.INICIO">Vamos Jogar!</span>
-        <span *ngSwitchCase="tipoStatus.INICIANDO">Iniciando Jogo</span>
-
+<section>
+    <div class="box inline">
+        <p class="box__title">Letras Tentadas</p>
+        <p class="box__content">{{letrasTentadas}}</p>
     </div>
-</fieldset>
+    
+    <div class="box inline">
+        <p class="box__title">Máximo de Erros</p>
+        <p class="box__content">{{erros}}</p>
+    </div>
+    
+    <div class="box block">
+        <p class="box__title">status</p>
+        <div [ngSwitch]="status">
+            <span class="box__content" *ngSwitchCase="tipoStatus.GANHOU">VOCÊ GANHOU!!! PARABENS!</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.PERDEU">você perdeu, que pena.</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.ACERTOU">Acertou a letra</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.ERROU">Errou a letra</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.REPETIDA">Você ja tentou essa letra!</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.INICIO">Vamos Jogar!</span>
+            <span class="box__content" *ngSwitchCase="tipoStatus.INICIANDO">Iniciando Jogo</span>
+        </div>
+    </div>
+</section>

@@ -15,23 +15,13 @@ export class CarrinhoComponent implements OnInit {
   constructor(private carrinhoService: CarrinhoService) { }
 
   async ngOnInit(): Promise<void> {
-    await this.Renderizalista()
+    await this.renderizaLista()
   }
   
-  async Renderizalista(){
+  async renderizaLista(){
     await this.carrinhoService.getItens()
     this.listaItens = this.carrinhoService.listaItem
     this.atualizaTotal()
-  }
-
-  async removerItem(id: any){
-    await this.carrinhoService.deleteItem(id)
-    await this.Renderizalista()
-  }
-
-  async ajustaQuantidade(input: any, id: any){
-    await this.carrinhoService.updateItem(id, { quantity: Number(input.target.value) })
-    await this.Renderizalista()
   }
 
   atualizaTotal(){
